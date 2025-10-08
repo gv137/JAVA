@@ -1,3 +1,6 @@
+
+import javax.swing.JOptionPane;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -8,12 +11,10 @@
  * @author alunocmc
  */
 public class FormAluno extends javax.swing.JFrame {
-
-    ControleAluno controle = new ControleAluno();
+    ControleALuno controle = new ControleALuno();
     /**
      * Creates new form FormAluno
      */
-    
     public FormAluno() {
         controle.Conectar();
         initComponents();
@@ -37,46 +38,63 @@ public class FormAluno extends javax.swing.JFrame {
         textnota1 = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         textnota2 = new javax.swing.JTextField();
-        BotaoCadastrar = new javax.swing.JButton();
-        BotaoListar = new javax.swing.JButton();
-        BotaoConsultar = new javax.swing.JButton();
-        BotaoMedia = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         textmedia = new javax.swing.JTextField();
+        BotaoCadastrar = new javax.swing.JButton();
+        BotaoConsultar = new javax.swing.JButton();
+        BotaoListar = new javax.swing.JButton();
+        BotaoMedia = new javax.swing.JButton();
         BotaoSair = new javax.swing.JButton();
+        BotaoExcluir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setText("Cadastro de Notas");
 
-        jLabel2.setText("RGM: ");
+        jLabel2.setText("RGM");
 
-        jLabel3.setText("Nome:");
+        jLabel3.setText("NOME");
 
-        textnome.addActionListener(new java.awt.event.ActionListener() {
+        jLabel4.setText("NOTA1");
+
+        jLabel5.setText("NOTA2");
+
+        jLabel6.setText("MEDIA");
+
+        BotaoCadastrar.setText("CADASTRAR");
+        BotaoCadastrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textnomeActionPerformed(evt);
+                BotaoCadastrarActionPerformed(evt);
             }
         });
 
-        jLabel4.setText("Nota 1:");
-
-        jLabel5.setText("Nota 2:");
-
-        BotaoCadastrar.setText("Cadastrar");
-
-        BotaoListar.setText("Listar");
-
-        BotaoConsultar.setText("Consultar");
-
-        BotaoMedia.setText("Cacular Media");
-
-        jLabel6.setText("Média:");
-
-        BotaoSair.setText("Sair");
-        BotaoSair.addActionListener(new java.awt.event.ActionListener() {
+        BotaoConsultar.setText("CONSULTAR");
+        BotaoConsultar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BotaoSairActionPerformed(evt);
+                BotaoConsultarActionPerformed(evt);
+            }
+        });
+
+        BotaoListar.setText("LISTAR");
+        BotaoListar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotaoListarActionPerformed(evt);
+            }
+        });
+
+        BotaoMedia.setText("MEDIA");
+        BotaoMedia.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotaoMediaActionPerformed(evt);
+            }
+        });
+
+        BotaoSair.setText("SAIR");
+
+        BotaoExcluir.setText("EXCLUIR");
+        BotaoExcluir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotaoExcluirActionPerformed(evt);
             }
         });
 
@@ -85,100 +103,138 @@ public class FormAluno extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(40, 40, 40)
-                        .addComponent(BotaoCadastrar)
-                        .addGap(46, 46, 46)
-                        .addComponent(BotaoConsultar))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(BotaoSair, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel1)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
-                .addComponent(BotaoListar)
-                .addGap(35, 35, 35))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(BotaoMedia)
-                .addGap(138, 138, 138))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(22, 22, 22)
+                .addGap(24, 24, 24)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(textnome, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(BotaoCadastrar)
+                        .addGap(18, 18, 18)
+                        .addComponent(BotaoConsultar)
+                        .addGap(30, 30, 30)
+                        .addComponent(BotaoListar, javax.swing.GroupLayout.DEFAULT_SIZE, 83, Short.MAX_VALUE)
+                        .addGap(18, 18, 18)
+                        .addComponent(BotaoMedia, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(textrgm, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(jLabel4)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(textnota1, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jLabel6)
-                                .addComponent(jLabel5))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(textnota2)
-                                .addComponent(textmedia)))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel2)
+                                .addGap(18, 18, 18)
+                                .addComponent(textrgm, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                    .addComponent(jLabel6)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(textmedia))
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(jLabel5)
+                                        .addComponent(jLabel4))
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(textnota1)
+                                        .addComponent(textnota2, javax.swing.GroupLayout.DEFAULT_SIZE, 101, Short.MAX_VALUE))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel3)
+                                .addGap(27, 27, 27)
+                                .addComponent(textnome, javax.swing.GroupLayout.PREFERRED_SIZE, 342, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addGap(19, 19, 19))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(85, 85, 85)
+                .addComponent(BotaoExcluir)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(BotaoSair)
+                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(176, 176, 176))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(13, 13, 13)
-                        .addComponent(jLabel1))
-                    .addComponent(BotaoSair))
+                .addGap(22, 22, 22)
+                .addComponent(jLabel1)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(textrgm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(textnome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(textnota1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
                     .addComponent(textnota2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
                     .addComponent(textmedia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
+                .addGap(27, 27, 27)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BotaoCadastrar)
                     .addComponent(BotaoConsultar)
-                    .addComponent(BotaoListar))
-                .addGap(36, 36, 36)
-                .addComponent(BotaoMedia))
+                    .addComponent(BotaoListar)
+                    .addComponent(BotaoMedia))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(BotaoSair)
+                    .addComponent(BotaoExcluir))
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void textnomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textnomeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_textnomeActionPerformed
+    private void BotaoMediaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoMediaActionPerformed
+     try{
+        double med = controle.CalcularMedia(Double.parseDouble(this.textnota1.getText()), 
+               Double.parseDouble(this.textnota2.getText()));
+      this.textmedia.setText(""+med);
+     }
+     catch(NumberFormatException e){
+         JOptionPane.showMessageDialog(null,"Campos notas em branco !!");
+     }
+    }//GEN-LAST:event_BotaoMediaActionPerformed
 
-    private void BotaoSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoSairActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_BotaoSairActionPerformed
+    private void BotaoCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoCadastrarActionPerformed
+        int numrgm=Integer.parseInt(this.textrgm.getText());
+        String nm=this.textnome.getText();
+        double n1=Double.parseDouble(this.textnota1.getText());
+        double n2=Double.parseDouble(this.textnota2.getText());
+        controle.Cadastrar(numrgm, nm, n1, n2);
+        this.textrgm.setText("");
+        this.textnome.setText("");
+        this.textnota1.setText("");
+        this.textnota2.setText("");
+    }//GEN-LAST:event_BotaoCadastrarActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
+    private void BotaoListarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoListarActionPerformed
+        controle.Listar();
+    }//GEN-LAST:event_BotaoListarActionPerformed
+
+    private void BotaoConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoConsultarActionPerformed
+      String dados=controle.Consultar(Integer.parseInt(this.textrgm.getText()));
+      String[] vetor = dados.split(";");
+      this.textnome.setText(vetor[1]);
+      this.textnota1.setText(""+vetor[2]);
+      this.textnota2.setText(""+vetor[3]);
+    }//GEN-LAST:event_BotaoConsultarActionPerformed
+
+    private void BotaoExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoExcluirActionPerformed
+        try{
+            controle.Excluir(Integer.parseInt(this.textrgm.getText()));
+        }
+        catch(NumberFormatException e){
+            JOptionPane.showMessageDialog(null, "Campos em branco !!!");
+        }
+    }//GEN-LAST:event_BotaoExcluirActionPerformed
+
+   
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -214,6 +270,7 @@ public class FormAluno extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BotaoCadastrar;
     private javax.swing.JButton BotaoConsultar;
+    private javax.swing.JButton BotaoExcluir;
     private javax.swing.JButton BotaoListar;
     private javax.swing.JButton BotaoMedia;
     private javax.swing.JButton BotaoSair;
