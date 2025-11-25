@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pesquisa de Satisfação</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+        }
+
+        .container {
+            width: 60%;
+            margin: 40px auto;
+            padding: 30px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #222;
+            margin-bottom: 30px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input[type="text"], input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 1px solid #aaa;
+        }
+
+        .pergunta {
+            margin-top: 25px;
+            margin-bottom: 10px;
+            font-size: 17px;
+            font-weight: bold;
+        }
+
+        .opcoes {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        .btn {
+            background: #0077ff;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            border-radius: 6px;
+            font-size: 17px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #005bcc;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Pesquisa de Satisfação</h1>
+
+        <form method="POST" action="Cadastro.jsp">
+
+            <label>Nome do cliente:</label>
+            <input type="text" name="nome" required>
+
+            <label>Email:</label>
+            <input type="email" name="email" required>
+
+            <div class="pergunta">1. Como você classifica nosso atendimento?</div>
+            <div class="opcoes">
+                <input type="radio" name="r1" value="1"> 1 <br>
+                <input type="radio" name="r1" value="2"> 2 <br>
+                <input type="radio" name="r1" value="3"> 3 <br>
+                <input type="radio" name="r1" value="4"> 4 <br>
+                <input type="radio" name="r1" value="5"> 5 <br>
+            </div>
+
+            <div class="pergunta">2. Como você avalia a pontualidade do técnico?</div>
+            <div class="opcoes">
+                <input type="radio" name="r2" value="1"> 1 <br>
+                <input type="radio" name="r2" value="2"> 2 <br>
+                <input type="radio" name="r2" value="3"> 3 <br>
+                <input type="radio" name="r2" value="4"> 4 <br>
+                <input type="radio" name="r2" value="5"> 5 <br>
+            </div>
+
+            <div class="pergunta">3. Como foi a espera no atendimento?</div>
+            <div class="opcoes">
+                <input type="radio" name="r3" value="1"> 1 <br>
+                <input type="radio" name="r3" value="2"> 2 <br>
+                <input type="radio" name="r3" value="3"> 3 <br>
+                <input type="radio" name="r3" value="4"> 4 <br>
+                <input type="radio" name="r3" value="5"> 5 <br>
+            </div>
+
+            <div class="pergunta">4. Como recomendaria para um conhecido?</div>
+            <div class="opcoes">
+                <input type="radio" name="r4" value="1"> 1 <br>
+                <input type="radio" name="r4" value="2"> 2 <br>
+                <input type="radio" name="r4" value="3"> 3 <br>
+                <input type="radio" name="r4" value="4"> 4 <br>
+                <input type="radio" name="r4" value="5"> 5 <br>
+            </div>
+
+            <button class="btn" type="submit">ENVIAR</button>
+        </form>
+    </div>
+
+</body>
+</html>
