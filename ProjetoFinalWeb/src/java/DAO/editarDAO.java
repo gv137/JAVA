@@ -4,10 +4,6 @@
  */
 package DAO;
 
-/**
- *
- * @author admin
- */
 public class editarDAO {
     
 }
